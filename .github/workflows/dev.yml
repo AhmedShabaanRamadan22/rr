@@ -78,6 +78,12 @@ jobs:
     - name: Prepare the env file for the build
       run: echo "${{ secrets.DEV_ENV_FILE }}" > .env
 
+    - name: Set up Docker Buildx (Cloud)
+      uses: docker/setup-buildx-action@v3
+      with:
+        driver: cloud
+        endpoint: "ahmed862/test"
+
     - name: Build & push docker image
       uses: docker/build-push-action@v6
       with:
