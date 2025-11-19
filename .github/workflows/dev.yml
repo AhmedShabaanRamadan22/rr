@@ -16,6 +16,7 @@ jobs:
     strategy:
       matrix:
         docker_image:
+        - name: nginx
         - name: php
           build_condition: '| grep -Ev "^(public/)"'
 
