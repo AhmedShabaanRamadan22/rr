@@ -1,0 +1,46 @@
+name: main
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  build:
+    if: ${{ github.event.pull_request.merged}}
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Deploy the first refada portal
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REFADA_PORTAL_FIRST }}
+          username: ${{ secrets.REFADA_PRODUCTION_USERNAME }}
+          key: ${{ secrets.REFADA_PRODUCTION_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -e
+            cd /var/www/admin-47.refada.co
+            git pull
+            composer install
+            php artisan optimize:clear
+            php artisan migrate --force
+            php artisan queue:restart
+            php artisan reverb:restart
+            php artisan permission:cache-reset
+            php artisan scribe:generate --config=scribe_wafir
+            php artisan scribe:generate --config=scribe_external
+            source ~/.nvm/nvm.sh
+            npm ci 
+            npm run build
+            npm run build-rtl
+                  
+      - name: Purge Cloudflare cache
+        run: |
+          curl https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache \
+          -H 'Content-Type: application/json' \
+          -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
+          -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
+          -d '{"purge_everything": true}' \
+          --fail-with-body

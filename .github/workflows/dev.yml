@@ -1,0 +1,117 @@
+name: dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - dev
+
+permissions:
+  contents: write #to push tags to github
+
+jobs:
+  build:
+    name: Build ${{ matrix.docker_image.name }} Dockerfile
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        docker_image:
+        - name: php
+          build_condition: '| grep -Ev "^(public/)"'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Extract latest tag
+      run: |
+        latest_tag=$(git tag --sort=-v:refname | grep "${{ matrix.docker_image.name }}" | head -n 1)
+        echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+
+    - name: Check if there is changes in the code
+      id: check
+      run: |
+        if [ -z "$LATEST_TAG" ] || git diff --name-only $LATEST_TAG HEAD ${{ matrix.docker_image.build_condition }}; then
+          echo "should_build=true" >> $GITHUB_OUTPUT
+        else
+          echo "should_build=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Increment version, and set tag name
+      run: |
+        if [ -z "$LATEST_TAG" ]; then
+          # No tag found, start at v1.0
+          major=1
+          minor=0
+        else
+          # Strip prefix
+          latest_tag=${LATEST_TAG#${{ matrix.docker_image.name }}-v}
+          IFS='.' read major minor <<< "$latest_tag"
+          # Increment minor
+          minor=$((minor + 1))
+        fi
+
+        tag="${{ matrix.docker_image.name }}-v$major.$minor"
+        echo "TAG=$tag" >> $GITHUB_ENV
+
+    - name: Configure Git user Configuration
+      run: |
+        git config user.name "github-actions"
+        git config user.email "it.rakaya@gmail.com"
+
+    - name: Tagging the commit
+      run: git tag $TAG
+
+    - name: Push the tag to github
+      if: ${{ env.APP_ENV != 'local' }}
+      run: git push origin $TAG
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Prepare the env file for the build
+      run: echo "${{ secrets.DEV_ENV_FILE }}" > .env
+
+    - name: Build & push docker image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        file: docker/${{ matrix.docker_image.name }}/Dockerfile
+        push: ${{ env.APP_ENV != 'local' }}
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/refada:${{ matrix.docker_image.name }}-dev
+          ${{ secrets.DOCKER_USERNAME }}/refada:${{ env.TAG }}
+
+  deploy:
+    name: deploy the new images
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEV_HOST }}
+        username: ${{ secrets.DEV_USERNAME }}
+        key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          set -e
+          cd /var/www/refada/admin-dev.rmcc.sa
+          git pull
+          docker compose pull
+          docker compose up -d
+
+    - name: Purge Cloudflare cache
+      run: |
+        curl https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache \
+        -H 'Content-Type: application/json' \
+        -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
+        -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
+        -d '{"purge_everything": true}' \
+        --fail-with-body

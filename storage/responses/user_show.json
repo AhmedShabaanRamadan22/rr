@@ -1,0 +1,28 @@
+{
+    "flag": true,
+    "status": "success",
+    "message": "User retrieved successfully.",
+    "data": {
+        "id": 1,
+        "name": "Test",
+        "phone": "+966512345678",
+        "email": "test@test.com",
+        "profile_photo": "http://www.test.com/person.png",
+        "address": "Address",
+        "national_source": "Makkah",
+        "birthday": "1493-12-03",
+        "national_id_expired": "1493-12-03",
+        "national_id": "1234567890",
+        "nationality": "Saudi",
+        "attachmentUrl": [
+            {
+                "attachment_id": 1,
+                "attachment_label_id": 1,
+                "label_ar": "بطاقة الهوية",
+                "label_en": "ID Card",
+                "value": "http://www.test.com/id_card.png",
+                "name": "id_card.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+name,lat,lng,country,iso2,admin_name,capital,population,population_proper
+الرياض,24.6333,46.7167,Saudi Arabia,SA,Ar Riyāḑ,primary,7237000,6694000
+جدة,21.5433,39.1728,Saudi Arabia,SA,Makkah al Mukarramah,,3976000,3976000
+مكة,21.4225,39.8233,Saudi Arabia,SA,Makkah al Mukarramah,admin,1675368,1675368
+المدينة المنورة,24.4700,39.6100,Saudi Arabia,SA,Al Madīnah al Munawwarah,admin,1180770,1180770
+الدمام,26.4333,50.1000,Saudi Arabia,SA,Ash Sharqīyah,admin,903312,903312
+الهفوف,25.3833,49.5833,Saudi Arabia,SA,Ash Sharqīyah,,660788,660788
+حفر الباطن,28.4342,45.9636,Saudi Arabia,SA,Ash Sharqīyah,,600000,300642
+الحلّة,23.4895,46.7564,Saudi Arabia,SA,Ar Riyāḑ,,594605,594605
+الطائف,21.2751,40.4062,Saudi Arabia,SA,Makkah al Mukarramah,,579970,579970
+تبوك,28.3972,36.5789,Saudi Arabia,SA,Tabūk,admin,547957,512629
+القطيف,26.5560,49.9960,Saudi Arabia,SA,Ash Sharqīyah,,524182,524182
+بريدة,26.3333,43.9667,Saudi Arabia,SA,Al Qaşīm,admin,467410,467410
+الجبيل,27.0000,49.6544,Saudi Arabia,SA,Ash Sharqīyah,,392948,392948
+حائل,27.5167,41.6833,Saudi Arabia,SA,Ḩā’il,admin,385257,310897
+الخرج,24.1483,47.3050,Saudi Arabia,SA,Ar Riyāḑ,,376325,376325
+القنفذة,19.1264,41.0789,Saudi Arabia,SA,Makkah al Mukarramah,,300516,300516
+المبرز,25.4416,49.6642,Saudi Arabia,SA,Ash Sharqīyah,,298562,298562
+ينبع,24.0883,38.0582,Saudi Arabia,SA,Al Madīnah al Munawwarah,,250000,188430
+سكاكا,29.9697,40.2000,Saudi Arabia,SA,Al Jawf,admin,242813,242813
+أبها,18.2169,42.5053,Saudi Arabia,SA,‘Asīr,admin,236157,236157
+صبيا,17.1489,42.6258,Saudi Arabia,SA,Jāzān,,228375,228375
+الخبر,26.2833,50.2000,Saudi Arabia,SA,Ash Sharqīyah,,219679,219679
+البيشة,20.0000,42.6000,Saudi Arabia,SA,‘Asīr,,205346,205346
+عنيزة,26.0906,43.9875,Saudi Arabia,SA,Al Qaşīm,,163729,163729
+راس تنورة,26.6500,50.1667,Saudi Arabia,SA,Ash Sharqīyah,,153933,153933
+الحوية,21.4411,40.4975,Saudi Arabia,SA,Makkah al Mukarramah,,148151,148151
+القريات,31.3167,37.3667,Saudi Arabia,SA,Al Jawf,,147550,147550
+الراس,25.8667,43.5000,Saudi Arabia,SA,Al Qaşīm,,133000,133000
+جازان,16.8892,42.5611,Saudi Arabia,SA,Jāzān,admin,127743,127743
+الزلفي,26.2833,44.8000,Saudi Arabia,SA,Ar Riyāḑ,,125000,125000
+سيهات,26.4750,50.0417,Saudi Arabia,SA,Ash Sharqīyah,,115000,115000
+حرض,24.1456,49.0653,Saudi Arabia,SA,Ash Sharqīyah,,111214,111214
+أحد المسارحة,16.7097,42.9550,Saudi Arabia,SA,Jāzān,,110710,110710
+خميس مشيط,18.3000,42.7333,Saudi Arabia,SA,‘Asīr,,99213,99213
+طريف,31.6775,38.6531,Saudi Arabia,SA,Al Ḩudūd ash Shamālīyah,,91713,91713
+شرورة,17.4833,47.1167,Saudi Arabia,SA,Najrān,,85977,85977
+رفحاء,29.6386,43.5014,Saudi Arabia,SA,Al Ḩudūd ash Shamālīyah,,80544,80544
+نجران,17.4917,44.1322,Saudi Arabia,SA,Najrān,admin,72038,72038
+الليث,20.1500,40.2667,Saudi Arabia,SA,Makkah al Mukarramah,,72000,72000
+الدرب,17.7167,42.2500,Saudi Arabia,SA,Jāzān,,69134,69134
+الخفجي,28.4167,48.5000,Saudi Arabia,SA,Ash Sharqīyah,,65000,65000
+بدر,23.7800,38.7906,Saudi Arabia,SA,Al Madīnah al Munawwarah,,63468,63468
+خليص,22.1539,39.3183,Saudi Arabia,SA,Makkah al Mukarramah,,63445,63445
+النماص,19.1200,42.1300,Saudi Arabia,SA,‘Asīr,,53908,53908
+المجاردة,19.1167,41.9167,Saudi Arabia,SA,‘Asīr,,53629,53629
+الوجه,26.2833,36.4167,Saudi Arabia,SA,Tabūk,,50000,50000
+المذنب,25.8601,44.2223,Saudi Arabia,SA,Al Qaşīm,,44043,44043
+بقيق,25.9350,49.6661,Saudi Arabia,SA,Ash Sharqīyah,,44000,44000
+العقيق,20.2685,41.6493,Saudi Arabia,SA,Al Bāḩah,,35629,35629
+ضليع رشيد,25.5067,42.8614,Saudi Arabia,SA,Al Qaşīm,,35000,35000
+شقراء,25.2483,45.2528,Saudi Arabia,SA,Ar Riyāḑ,,35000,35000
+المندق,20.1833,41.2333,Saudi Arabia,SA,Al Bāḩah,,33319,33319
+ظهران,26.2667,50.1500,Saudi Arabia,SA,Ash Sharqīyah,,32067,32067
+العيدابي,17.2370,42.9390,Saudi Arabia,SA,Jāzān,,31735,31735
+دومة الجندل,29.8833,40.2167,Saudi Arabia,SA,Al Jawf,,31480,31480
+الشنّان,27.1782,42.4430,Saudi Arabia,SA,Ḩā’il,,30441,30441
+عرعر,30.9833,41.0167,Saudi Arabia,SA,Al Ḩudūd ash Shamālīyah,admin,27449,27449
+حقل,29.2833,34.9333,Saudi Arabia,SA,Al Jawf,,25649,25649
+ضباء,27.3493,35.6962,Saudi Arabia,SA,Tabūk,,25601,25601
+الباحة,20.0125,41.4653,Saudi Arabia,SA,Al Bāḩah,admin,21983,21983

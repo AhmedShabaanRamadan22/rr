@@ -1,0 +1,29 @@
+{
+    "flag": true,
+    "status": "success",
+    "message": "Facility retrieved successfully.",
+    "data": {
+        "id": 7,
+        "registration_number": 1234567890,
+        "name": "Test's kitche",
+        "email": "test@test.com",
+        "phone": "+966512345678",
+        "city": "مكة",
+        "district": "الملك فهد",
+        "street_name": "aaaa",
+        "building_number": 1111,
+        "postal_code": 222222,
+        "sub_number": 3333,
+        "national_address": "مكة - الملك فهد - aaaa - 1111 - 222222 - 3333",
+        "attachmentUrl": [
+            {
+                "attachment_id": 1,
+                "attachment_label_id": 7,
+                "label_ar": "هوية مالك المنشأة",
+                "label_en": "Facility's Owner ID",
+                "value": "http://www.test.com/acility_owner_id.png",
+                "name": "facility_owner_id.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,60 @@
+FROM php:8.4-fpm-alpine
+
+WORKDIR /var/www/html
+
+# Install system packages
+RUN apk update && apk add --no-cache \
+    curl \
+    linux-headers \
+    libpng-dev \
+    libxml2-dev \
+    libzip-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
+    libxslt-dev \
+    oniguruma-dev \
+    pkgconf \
+    icu-dev \
+    zip \
+    unzip \
+    bash \
+    supervisor \
+    nodejs \
+    npm \
+    git
+
+# Configure and install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+        pdo_mysql mbstring exif pcntl bcmath gd zip opcache calendar mysqli xsl sockets intl \
+    && docker-php-ext-enable intl
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+#  Copy all files before installing composer packages
+COPY . .
+
+# Create SQLite database file
+RUN touch database/database.sqlite
+
+# Install PHP dependencies
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Install JS dependencies
+RUN npm ci
+
+# Build static files
+RUN npm run build
+RUN npm run build-rtl
+    
+# Optimize Laravel (ignore errors if no .env yet)
+RUN php artisan optimize
+
+# Set the default exposed port
+EXPOSE 8000
+
+CMD sh -c "php artisan serve --host=0.0.0.0"
+
+
+           

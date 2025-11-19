@@ -1,0 +1,22 @@
+{
+    "flag": true,
+    "status": "success",
+    "message": "Employee retrieved successfully.",
+    "data": {
+        "id": 1,
+        "name": "محمد احمد",
+        "national_id": "1234567890",
+        "position": "طباخ رئيس",
+        "facility_name": "الطهاة الخمس",
+        "attachmentUrl": [
+            {
+                "attachment_id": 1,
+                "attachment_label_id": 7,
+                "label_ar": "هوية موظف المنشأة",
+                "label_en": "Facility's Employee ID",
+                "value": "http://www.test.com/facility_employee_id.png",
+                "name": "facility_employee_id.png"
+            }
+        ]
+    }
+}

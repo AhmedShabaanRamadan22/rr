@@ -1,0 +1,24 @@
+{
+    "flag": true,
+    "status": "success",
+    "message": "Order fetched successfully.",
+    "data": {
+        "id": 1,
+        "code": "ORD00001",
+        "user_name": "مدير النظام",
+        "organization": "اسم المنظمة",
+        "service": "اعاشة",
+        "status": "جديد",
+        "facility": "اسم المطبخ",
+        "updated_at": "2025-10-27T08:36:37.000000Z",
+        "created_at": "2025-10-27T08:36:37.000000Z",
+        "notes": [
+            {
+                "id": 2,
+                "content": "تمت مراجعة الطلب والتواصل مع الجهة المختصة",
+                "user_name": "مدير النظام",
+                "created_at": "2025-10-27T08:36:37.000000Z"
+            }
+        ]
+    }
+}

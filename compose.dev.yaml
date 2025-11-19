@@ -1,0 +1,20 @@
+services:
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: refada-${APP_ENV}
+    image: refada:${APP_ENV}
+    networks:
+      - refada-network
+    ports:
+      - "${APP_PORT}:8000"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/node_modules
+      - /var/www/html/vendor
+
+networks:
+  refada-network:
+    driver: bridge
+    name: refada-${APP_ENV}-network

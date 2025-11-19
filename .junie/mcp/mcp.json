@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Applications/MAMP/bin/php/php8.2.0/bin/php",
+            "args": [
+                "/Users/seemofo27/Desktop/Folders/my-projects/Laravel/Rakaya/Steex_HTML_Laravel_v1.1.0/Laravel/Admin/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

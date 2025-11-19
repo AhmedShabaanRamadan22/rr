@@ -1,0 +1,521 @@
+{
+    "primary_categories": [
+        {
+            "name": "تقييم تأسيسي قبل الموسم (منى)",
+            "weight": 10,
+            "sub_categories": [
+                {
+                    "name": "جاهزية البنية التحتية",
+                    "form_name": "جاهزية المراكز قبل الموسم بمشعر منى 1",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 395,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 396,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 399,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 381,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 384,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 386,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 397,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية معدات وأدوات الطبخ",
+                    "form_name": "جاهزية المراكز قبل الموسم بمشعر منى 1",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 376,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 398,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 375,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "تقييم تأسيسي قبل الموسم (عرفة)",
+            "weight": 10,
+            "sub_categories": [
+                {
+                    "name": "جاهزية البنية التحتية",
+                    "form_name": "جاهزية المراكز قبل الموسم بمشعر عرفات 1",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 395,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": [396, 403],
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 397,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 399,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 381,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 386,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 384,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية معدات وأدوات الطبخ",
+                    "form_name": "جاهزية المراكز قبل الموسم بمشعر عرفات 1",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 376,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 398,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 375,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "تقييم تشغيلي دوري أثناء الموسم لمنى",
+            "weight": 20,
+            "sub_categories": [
+                {
+                    "name": "عرض لوحة المستندات الرسمية والتراخيص بشكل واضح في موقع العمل",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر منى",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 424,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية البنية التحتية",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر منى",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 425,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 426,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 443,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 408,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 437,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "سلامة البيئة الداخلية للمطبخ وجاهزيتها الصحية والتشغيلية",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر منى",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 436,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 442,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 405,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 430,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 433,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "رضا الحجاج والمسؤولين",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "mina",
+                    "questions": [
+                        {
+                            "question_id": 93,
+                            "correct_answer": "no"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية العاملين والتزامهم",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "mina",
+                    "questions": [
+                        {
+                            "question_id": 98,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 101,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 102,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 103,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "سلامة الأغذية والعمليات",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر منى",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 434,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 435,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 441,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جودة إعداد الطعام ",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "mina",
+                    "questions": [
+                        {
+                            "question_id": 108,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 114,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 209,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 467,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "تقييم تشغيلي دوري أثناء الموسم لعرفات",
+            "weight": 20,
+            "sub_categories": [
+                {
+                    "name": "عرض لوحة المستندات الرسمية والتراخيص بشكل واضح في موقع العمل",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر عرفات",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 177,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية البنية التحتية",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر عرفات",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 425,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 449,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 443,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 408,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 437,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "سلامة البيئة الداخلية للمطبخ وجاهزيتها الصحية والتشغيلية",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر عرفات",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 452,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 466,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 405,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "رضا الحجاج والمسؤولين",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "arafat",
+                    "questions": [
+                        {
+                            "question_id": 93,
+                            "correct_answer": "no"
+                        }
+                    ]
+                },
+                {
+                    "name": "جاهزية العاملين والتزامهم",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "arafat",
+                    "questions": [
+                        {
+                            "question_id": 98,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 101,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 102,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 103,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": " سلامة الأغذية والعمليات",
+                    "form_name": "جاهزية المراكز أثناء الموسم بمشعر عرفات",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 434,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 435,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 441,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "جودة إعداد الطعام",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": "arafat",
+                    "questions": [
+                        {
+                            "question_id": 108,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 114,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 209,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 467,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "المعايير للتقييم النهائي- بعد التشغيل",
+            "weight": 5,
+            "sub_categories": [
+                {
+                    "name": "جودة إعداد الطعام",
+                    "form_name": "تقييم الوجبات بالمشاعر",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 108,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 114,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 209,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 208,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "نظافة الموقع في منى قبل التسليم",
+                    "form_name": "تسليم مطابخ مشعر منى",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 216,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 217,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 218,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 219,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 220,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 229,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 222,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 223,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 224,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                },
+                {
+                    "name": "نظافة الموقع في عرفة قبل التسليم",
+                    "form_name": "تسليم مطابخ مشعر عرفات",
+                    "location": null,
+                    "questions": [
+                        {
+                            "question_id": 228,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 232,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 226,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 227,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 228,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 233,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 236,
+                            "correct_answer": "yes"
+                        },
+                        {
+                            "question_id": 229,
+                            "correct_answer": "yes"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

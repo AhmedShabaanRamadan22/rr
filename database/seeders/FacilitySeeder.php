@@ -1,0 +1,191 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Facility;
+use Carbon\Carbon;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class FacilitySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        Facility::create([
+            'user_id' => '1',
+            'name' => 'الطهاة الخمس',
+            'version_date' => '2018-01-24',
+            'version_date_hj' => '1440-02-19',
+            'end_date' => '2025-01-24',
+            'end_date_hj' => '1446-02-19',
+            'registration_number' => '5748382787',
+            'registration_source' => '3',
+            'license' => '7433265478',
+            'license_expired' => '2025-09-14',
+            'license_expired_hj' => '1446-12-29',
+            'capacity' => '1200',
+            'tax_certificate' => '6682635',
+            'employee_number' => '50',
+            'chefs_number' => '10',
+            'kitchen_space' => '30',
+            'city_id' => '24',
+            'district_id' => '851',
+            'street_name' => '4th st',
+            'building_number' => '4420',
+            'postal_code' => '84484',
+            'sub_number' => '8879',
+        ]);
+        Facility::create([
+            'user_id' => '3',
+            'name' => 'المطبخ العربي',
+            'version_date' => '2017-03-14',
+            'version_date_hj' => '1441-02-12',
+            'end_date' => '2024-06-21',
+            'end_date_hj' => '1447-07-23',
+            'registration_number' => '7778887779',
+            'registration_source' => '3',
+            'license' => '1234567891',
+            'license_expired' => '2025-09-14',
+            'license_expired_hj' => '1446-12-29',
+            'capacity' => '800',
+            'tax_certificate' => '2382635',
+            'employee_number' => '10',
+            'chefs_number' => '3',
+            'kitchen_space' => '20',
+            'city_id' => '1',
+            'district_id' => '88',
+            'street_name' => '4th st',
+            'building_number' => '2340',
+            'postal_code' => '91484',
+            'sub_number' => '2979',
+        ]);
+        Facility::create([
+            'user_id' => '6',
+            'name' => 'مطبخ أذواق الحجاز',
+            'version_date' => '2019-02-23',
+            'version_date_hj' => '1447-12-12',
+            'end_date' => '2028-12-21',
+            'end_date_hj' => '1448-02-15',
+            'registration_number' => '1987654321',
+            'registration_source' => '3',
+            'license' => '6789054321',
+            'license_expired' => '2025-09-14',
+            'license_expired_hj' => '1446-12-29',
+            'capacity' => '900',
+            'tax_certificate' => '3717635',
+            'employee_number' => '20',
+            'chefs_number' => '5',
+            'kitchen_space' => '30',
+            'city_id' => '3',
+            'district_id' => '963',
+            'street_name' => '4th st',
+            'building_number' => '7728',
+            'postal_code' => '993716',
+            'sub_number' => '3727',
+        ]);
+        Facility::create([
+            'user_id' => '5',
+            'name' => 'مطبخ ضيافة الجاوي',
+            'version_date' => '2019-02-23',
+            'version_date_hj' => '1447-12-12',
+            'end_date' => '2028-12-21',
+            'end_date_hj' => '1448-02-15',
+            'registration_number' => '1987654222',
+            'registration_source' => '3',
+            'license' => '6789054222',
+            'license_expired' => '2025-09-14',
+            'license_expired_hj' => '1446-12-29',
+            'capacity' => '900',
+            'tax_certificate' => '3717635',
+            'employee_number' => '20',
+            'chefs_number' => '5',
+            'kitchen_space' => '30',
+            'city_id' => '3',
+            'district_id' => '963',
+            'street_name' => '4th st',
+            'building_number' => '7728',
+            'postal_code' => '993716',
+            'sub_number' => '3727',
+        ]);
+
+        Facility::create([
+            'user_id' => '5',
+            'name' => 'مطبخ الخير',
+            'version_date' => '2020-05-15',
+            'version_date_hj' => '1441-09-23',
+            'end_date' => '2029-07-10',
+            'end_date_hj' => '1449-11-25',
+            'registration_number' => '1234567890',
+            'registration_source' => '2',
+            'license' => '9876543210',
+            'license_expired' => '2027-03-18',
+            'license_expired_hj' => '1448-06-07',
+            'capacity' => '750',
+            'tax_certificate' => '87654321',
+            'employee_number' => '15',
+            'chefs_number' => '4',
+            'kitchen_space' => '25',
+            'city_id' => '1',
+            'district_id' => '732',
+            'street_name' => 'Main St',
+            'building_number' => '1234',
+            'postal_code' => '567890',
+            'sub_number' => '5678',
+        ]);
+
+        Facility::create([
+            'user_id' => '5',
+            'name' => 'مطبخ الرياح',
+            'version_date' => '2021-09-30',
+            'version_date_hj' => '1443-03-24',
+            'end_date' => '2030-11-05',
+            'end_date_hj' => '1451-04-30',
+            'registration_number' => '9876543210',
+            'registration_source' => '1',
+            'license' => '1234567890',
+            'license_expired' => '2028-12-03',
+            'license_expired_hj' => '1449-05-26',
+            'capacity' => '800',
+            'tax_certificate' => '543219876',
+            'employee_number' => '18',
+            'chefs_number' => '6',
+            'kitchen_space' => '28',
+            'city_id' => '2',
+            'district_id' => '521',
+            'street_name' => 'Park Ave',
+            'building_number' => '5678',
+            'postal_code' => '123456',
+            'sub_number' => '8765',
+        ]);
+
+        // for ($i = 0; $i < 100; $i++) {
+        //     Facility::create([
+        //         'user_id' => '2',
+        //         'name' => 'منشآة رقم ' . ($i + 1),
+        //         'version_date' => now()->subDays(rand(1, 365))->toDateString(),
+        //         'version_date_hj' => '144' . rand(1, 5) . '-' . rand(1, 12) . '-' . rand(1, 29),
+        //         'end_date' => now()->addYears(rand(1, 10))->toDateString(),
+        //         'end_date_hj' => '144' . rand(1, 5) . '-' . rand(1, 12) . '-' . rand(1, 29),
+        //         'registration_number' => rand(10000000000, 99999999999),
+        //         'registration_source' => rand(1, 3),
+        //         'license' => rand(1000000000, 99999999999),
+        //         'license_expired' => now()->addMonths(rand(1, 36))->toDateString(),
+        //         'license_expired_hj' => '144' . rand(1, 5) . '-' . rand(1, 12) . '-' . rand(1, 29),
+        //         'capacity' => rand(500, 1000),
+        //         'tax_certificate' => rand(100000000000000, 999999999999999),
+        //         'employee_number' => rand(10, 30),
+        //         'chefs_number' => rand(3, 8),
+        //         'kitchen_space' => rand(20, 40),
+        //         'city_id' => rand(1, 5),
+        //         'district_id' => rand(500, 999),
+        //         'street_name' => 'Street ' . ($i + 1),
+        //         'building_number' => rand(1000, 9999),
+        //         'postal_code' => rand(100000, 999999),
+        //         'sub_number' => rand(1000, 9999),
+        //     ]);
+        // }
+    }
+}

@@ -1,0 +1,634 @@
+<div class="">
+                    <form class="form-horizontal" action="{{ route('organizations.update', $organization->id) }}"
+                        method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="row justify-content-center">
+                            <div class="col-xxl-3">
+                                <div class="card overflow-hidden">
+                                    <div>
+                                        <img id="organization-backgroundImage"
+                                            src="{{ $organization->background_image ?? URL::asset('build/images/users/32/background_image.png') }}"
+                                            alt="" class="card-img-top profile-wid-img object-fit-cover"
+                                            style="height: 200px;">
+                                        <div>
+                                            <input id="profile-foreground-img-file-input" name="background_image"
+                                                type="file" accept="image/*"
+                                                class="profile-foreground-img-file-input d-none"
+                                                onchange="document.getElementById('organization-backgroundImage').src = window.URL.createObjectURL(this.files[0])">
+                                            <label for="profile-foreground-img-file-input"
+                                                class="profile-photo-edit btn btn-light btn-sm position-absolute top-0 m-3">
+                                                <i class="ri-image-edit-line align-bottom me-1"></i>
+                                                {{ trans('translation.edit-interface-org') }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-0 mt-n5">
+                                        <div class="text-center">
+                                            <div class="profile-user position-relative d-inline-block mx-auto">
+                                                <img id="organization-img"
+                                                    src="{{ $organization->logo ?? URL::asset('build/images/users/32/logo.png') }}"
+                                                    alt=""
+                                                    class="avatar-lg rounded-circle object-fit-cover border-0 img-thumbnail user-profile-image">
+                                                <div
+                                                    class="avatar-xs p-0 rounded-circle profile-photo-edit position-absolute end-0 bottom-0">
+                                                    <input id="profile-img-file-input" name="logo" type="file"
+                                                        accept="image/*" class="profile-img-file-input d-none"
+                                                        onchange="document.getElementById('organization-img').src = window.URL.createObjectURL(this.files[0])">
+                                                    <label for="profile-img-file-input"
+                                                        class="profile-photo-edit avatar-xs">
+                                                        <span class="avatar-title rounded-circle bg-light text-body">
+                                                            <i class="bi bi-camera"></i>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row ">
+                            <div class="col-md-6">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="inputNameAr"
+                                            class=" form-label">{{ trans('translation.organization-name-ar') }}</label>
+                                        <input type="text" class="form-control" id="inputNameAr" name="name_ar"
+                                            value="{{ $organization->name_ar }}"
+                                            placeholder="{{ trans('translation.organization-name-ar') }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="inputNameEn"
+                                            class=" form-label">{{ trans('translation.organization-name-en') }}</label>
+                                        <input type="text" class="form-control" id="inputNameEn" name="name_en"
+                                            value="{{ $organization->name_en }}"
+                                            placeholder="{{ trans('translation.organization-name-en') }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="inputDomain"
+                                            class=" form-label">{{ trans('translation.domain') }}</label>
+                                        <input type="text" class="form-control" id="inputDomain" name="domain"
+                                            value="{{ $organization->domain }}"
+                                            placeholder="{{ trans('translation.domain') }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="inputwhatsapp"
+                                            class=" form-label">{{ trans('translation.whatsapp-instance-id') }}</label>
+                                        <input type="text" class="form-control" id="inputwhatsapp"
+                                            name="whatsapp_instance_id" value="{{ $organization->whatsapp_instance_id }}"
+                                            placeholder="{{ trans('translation.whatsapp-instance-id') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="inputPhone"
+                                            class=" form-label">{{ trans('translation.phone') }}</label>
+                                        <input type="text" class="form-control" id="inputPhone" name="phone"
+                                            value="{{ $organization->phone }}"
+                                            placeholder="{{ trans('translation.phone') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-1">
+                                <div class='row'>
+                                    <div class="col">
+                                        <label for="primary_color"
+                                            class="form-label">{{ trans('translation.primary-color') }}</label>
+                                        <input type="color" class="form-control form-control-color" id="primary_color"
+                                            value="{{ $organization->primary_color }}" name="primary_color">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="inputEsnad"
+                                        class="form-label">{{ trans('translation.has_esnad') }}</label>
+                                    <input class=" d-none" type="checkbox" role="switch" name="has_esnad" checked
+                                        value="0">
+                                    <div class="form-group">
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="has_esnad" name="has_esnad"
+                                                {{ $organization->has_esnad == 1 ? 'checked' : '' }} value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-4 mt-4">
+                                <label for="edit_services" class="form-label">{{ trans('translation.services') }}</label>
+                                <div class="row">
+                                    @foreach ($organization->organization_services as $organization_service)
+                                        <div class="text-center col-md-2 mx-2 border shadow rounded serviceCard">
+                                            <div class="row">
+                                                <div class="d-flex p-2 justify-content-between align-items-center ">
+                                                    <div>
+                                                        {{ $organization_service->service->name }}
+                                                    </div>
+                                                    <button type="button" class="btn btn-danger btn-sm edit_services"
+                                                        value="{{ $organization_service->id }}"
+                                                        data-service-id="{{ $organization_service->service->id }}">
+                                                        <i class="mdi mdi-trash-can-outline mdi-lg align-middle"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="add-services-button" class="btn btn-primary btn-sm"
+                                        data-organization-id="{{ $organization->id }}" data-bs-target="#addservices"
+                                        data-services="{{ $organization->services->pluck('id')->implode(',') }}"
+                                        data-bs-toggle="modal">
+                                        <i class="mdi mdi-plus mdi-lg align-middle plus plus-bigger"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <x-custom-ckeditor columnName="about-us">
+                                    {{ $organization->about_us }}
+                                </x-custom-ckeditor>
+                                {{--
+                                    
+                                    <label for="editor1" class=" form-label">{{ trans('translation.about-us') }}</label>
+                                    <textarea name="about_us" id="editor1" cols="30" rows="10" value=""
+                                        placeholder="{{  trans('translation.write-here') }}">{{ $organization->about_us }}</textarea>
+                                    --}}
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <x-custom-ckeditor columnName="policies">
+                                    {{ $organization->policies }}
+                                </x-custom-ckeditor>
+                                <!-- <label for="editor2" class=" form-label">{{ trans('translation.policies') }}</label>
+                                                        <textarea name="policies" id="editor2" cols="30" rows="10" value=""
+                                                            placeholder="{{ trans('translation.write-here') }}">{{ $organization->policies }}</textarea> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-primary col-6">{{ trans('translation.update') }}</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+
+
+    "news" => "الأخبار", 
+    "add-new" => "إضافة خبر", 
+    "one-new" => "الخبر", 
+    "org-info-msg" => "لتفاصيل اكثر انقر على المزيد", 
+
+                news => 'الأخبار',
+                news => 'الأخبار',
+
+
+
+
+@extends('layouts.master')
+@section('title')
+    @lang('translation.email')
+@endsection
+@section('content')
+    <div class="email-wrapper d-lg-flex gap-1 mx-n3 mt-n3 p-1">
+        
+        <!-- end email-menu-sidebar -->
+
+        <div class="email-content">
+            <div class="p-4 pb-0">
+                <div class="border-bottom border-bottom-dashed">
+                    <div class="row mb-3 mb-sm-0 align-items-center g-3">
+
+                        <div class="col-lg-5 me-auto">
+                            <div class="search-box">
+                                <input type="text" class="form-control border-0" id="searchResultList" autocomplete="off"
+                                    placeholder="Search here...">
+                                <i class="bi bi-search search-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-auto">
+                            <div class="d-flex gap-sm-1 email-topbar-link">
+                                <button type="button" class="btn btn-subtle-success btn-icon btn-sm fs-lg email-menu-btn d-block d-lg-none">
+                                    <i class="ri-menu-2-fill align-bottom"></i>
+                                </button>
+                                <button type="button" class="btn btn-ghost-secondary btn-icon btn-sm fs-lg ms-auto">
+                                    <i class="bi bi-arrow-clockwise"></i>
+                                </button>
+                                <div class="dropdown">
+                                    <button class="btn btn-ghost-secondary btn-icon btn-sm fs-lg" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="#">Mark as Unread</a>
+                                        <a class="dropdown-item" href="#">Mark as Important</a>
+                                        <a class="dropdown-item" href="#">Add to Tasks</a>
+                                        <a class="dropdown-item" href="#">Add Star</a>
+                                        <a class="dropdown-item" href="#">Mute</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-3">
+                        <div class="row align-items-center mt-3 mb-2 d-flex">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="mail-primary">
+                        <div class="message-list-content mx-n4 px-4 message-list-scroll">
+                            <div id="elmLoader">
+                                <div class="spinner-border text-primary avatar-sm" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            {{-- <ul class="message-list" id="mail-list"> --}}
+                            <ul class="message-list">
+                                <li class="read">
+                                    <div class="col-mail col-mail-1">
+                                        <div class="form-check checkbox-wrapper-mail fs-14">
+
+                                            <label class="form-check-label" for="checkbox-' + mailData.id + '">1</label>
+                                        </div>
+                                        <input type="hidden" value=' + mailData.userImg + ' class="mail-userimg" />
+
+                                        <a href="javascript: void(0);" class="title"><span class="title-name">عنوان
+                                                الرسالة</span></a>
+                                    </div>
+                                    <div class="col-mail col-mail-2">
+                                        <a href="javascript: void(0);" class="subject"> <span class="teaser">محتوى
+                                                الرسالة</span>
+                                        </a>
+                                        <div class="date">7 Nov</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compose Modal -->
+    <div class="modal fade" id="composemodal" tabindex="-1" role="dialog" aria-labelledby="composemodalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-3 bg-light">
+                    <h5 class="modal-title" id="composemodalTitle">إرسال رسالة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3 position-relative">
+                            <input type="text" class="form-control email-compose-input" data-choices
+                                data-choices-limit="15" value="support@themesbrand.com" data-choices-removeItem
+                                placeholder="To">
+                           
+                        </div>
+                        <div class="collapse" id="CcRecipientsCollapse">
+                            <div class="mb-3">
+                                <label>Cc:</label>
+                                <input type="text" class="form-control" data-choices data-choices-limit="15"
+                                    data-choices-removeItem placeholder="Cc recipients">
+                            </div>
+                        </div>
+                        <div class="collapse" id="BccRecipientsCollapse">
+                            <div class="mb-3">
+                                <label>Bcc:</label>
+                                <input type="text" class="form-control" data-choices data-choices-limit="15"
+                                    data-choices-removeItem placeholder="Bcc recipients">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <x-custom-ckeditor columnName="policies">
+                            {{-- {{ $organization->policies }} --}}
+                        </x-custom-ckeditor>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-ghost-danger" data-bs-dismiss="modal">Discard</button>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Send</button>
+                        <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i
+                                        class="ri-timer-line text-muted me-1 align-bottom"></i> Schedule Send</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+    <!-- removeItemModal -->
+    <div id="removeItemModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mt-2 text-center">
+                        <div class="text-danger display-5">
+                            <i class="bi bi-trash3"></i>
+                        </div>
+                        <div class="mt-4 pt-2 fs-lg mx-4 mx-sm-5">
+                            <h4>Are you Sure ?</h4>
+                            <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record ?</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                        <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes, Delete It!</button>
+                    </div>
+                </div>
+                <!-- modal-body -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+@endsection
+
+@section('script')
+    <script src="{{ URL::asset('build/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js') }}"></script>
+    <script src="{{ URL::asset('build/js/pages/mailbox.init.js') }}"></script>
+    <script src="{{ URL::asset('build/js/app.js') }}"></script>
+    <script>
+        // Search result list
+        var searchList = document.getElementById("searchResultList");
+        searchList.addEventListener("keyup", function() {
+            var inputVal = searchList.value.toLowerCase();
+
+            function filterItems(arr, query) {
+                return arr.filter(function(el) {
+                    return el.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 || el.description
+                        .toLowerCase().indexOf(query.toLowerCase()) !== -1 || el.title.toLowerCase()
+                        .indexOf(query.toLowerCase()) !== -1
+                })
+            }
+
+            var filterData = filterItems(allmaillist, inputVal);
+
+            loadMailData(filterData);
+        });
+    </script>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+@extends('layouts.master')
+@section('title')
+    @lang('translation.email')
+@endsection
+@section('content')
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0">{{ trans('translation.messages') }}</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item active">{{ trans('translation.messages') }}</li>
+                        <li class="breadcrumb-item"><a href="{{ route('root') }}">{{ trans('translation.home') }}</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center gy-3">
+                        <div class="col-lg-3 order-last order-md-first me-auto">
+                            <div class="search-box">
+                                <input type="text" class="form-control search"
+                                    placeholder="{{ trans('translation.search') }}">
+                                <i class="ri-search-line search-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-auto text-end">
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#addOrganization"><i
+                                        class="mdi mdi-account-group-outline align-baseline me-1"></i>
+                                    {{ trans('translation.add-new-oranization') }}</button>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+    </div>
+    <div class="email-wrapper d-lg-flex gap-1 mx-n3 mt-n3 p-1">
+        <div class="col-lg-2">
+            <div class="p-4 d-flex flex-column h-100">
+                <div class="pb-3">
+                    <button type="button" class="btn btn-subtle-primary w-100" data-bs-toggle="modal"
+                        data-bs-target="#composemodal"><i class="bi bi-plus-lg me-1 align-baseline"></i> Compose</button>
+                </div>
+
+                <div class="mx-n4 px-4 " data-simplebar>
+                    <div>
+                        <h5 class="fs-xs text-uppercase text-muted mt-4">Labels</h5>
+
+                        <div class="mail-list mt-1">
+                            @foreach ($organizations as $organization)
+                            <a href="#"><span class="ri-checkbox-blank-circle-line me-2 text-danger"></span><span
+                                class="mail-list-link" data-type="label">{{$organization}}</span></a>
+                            @endforeach
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end email-menu-sidebar -->
+
+        <div class="email-content">
+            <div class="p-4 pb-0">
+                <div class="border-bottom border-bottom-dashed">
+                    <div class="row mb-3 mb-sm-0 align-items-center g-3">
+
+                        <div class="col-lg-5 me-auto">
+                            <div class="search-box">
+                                <input type="text" class="form-control border-0" id="searchResultList" autocomplete="off"
+                                    placeholder="Search here...">
+                                <i class="bi bi-search search-icon"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="px-3">
+                        <div class="row align-items-center mt-3 mb-2 d-flex">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="mail-primary">
+                        <div class="message-list-content mx-n4 px-4 message-list-scroll">
+                            {{-- <div id="elmLoader">
+                                <div class="spinner-border text-primary avatar-sm" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div> --}}
+                            {{-- <ul class="message-list" id="mail-list"></ul> --}}
+                            <ul class="message-list">
+                                <li class="read">
+                                    <div class="col-mail col-mail-1">
+                                        <div class="form-check checkbox-wrapper-mail fs-14">
+
+                                            <label class="form-check-label" for="checkbox-' + mailData.id + '">1</label>
+                                        </div>
+                                        <input type="hidden" value=' + mailData.userImg + ' class="mail-userimg" />
+
+                                        <a href="javascript: void(0);" class="title"><span class="title-name">عنوان
+                                                الرسالة</span></a>
+                                    </div>
+                                    <div class="col-mail col-mail-2">
+                                        <a href="javascript: void(0);" class="subject"> <span class="teaser">محتوى
+                                                الرسالة</span>
+                                        </a>
+                                        <div class="date">7 Nov</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end email-content -->
+    </div>
+    <!-- end email wrapper -->
+
+    <!-- Compose Modal -->
+    <div class="modal fade" id="composemodal" tabindex="-1" role="dialog" aria-labelledby="composemodalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-3 bg-light">
+                    <h5 class="modal-title" id="composemodalTitle">New Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="mb-3 position-relative">
+                            <input type="text" class="form-control email-compose-input" data-choices
+                                data-choices-limit="15" value="support@themesbrand.com" data-choices-removeItem
+                                placeholder="To">
+                            <div class="position-absolute top-0 end-0">
+                                <div class="d-flex">
+                                    <button class="btn btn-link text-reset fw-semibold px-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#CcRecipientsCollapse"
+                                        aria-expanded="false" aria-controls="CcRecipientsCollapse">
+                                        Cc
+                                    </button>
+                                    <button class="btn btn-link text-reset fw-semibold px-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#BccRecipientsCollapse"
+                                        aria-expanded="false" aria-controls="BccRecipientsCollapse">
+                                        Bcc
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse" id="CcRecipientsCollapse">
+                            <div class="mb-3">
+                                <label>Cc:</label>
+                                <input type="text" class="form-control" data-choices data-choices-limit="15"
+                                    data-choices-removeItem placeholder="Cc recipients">
+                            </div>
+                        </div>
+                        <div class="collapse" id="BccRecipientsCollapse">
+                            <div class="mb-3">
+                                <label>Bcc:</label>
+                                <input type="text" class="form-control" data-choices data-choices-limit="15"
+                                    data-choices-removeItem placeholder="Bcc recipients">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="ck-editor-reverse">
+                            <div id="email-editor"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-ghost-danger" data-bs-dismiss="modal">Discard</button>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Send</button>
+                        <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i
+                                        class="ri-timer-line text-muted me-1 align-bottom"></i> Schedule Send</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+@endsection

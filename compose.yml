@@ -1,0 +1,41 @@
+services:
+  laravel:
+    image: rakaya/refada:php-${DOCKER_ENV}
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: always
+    container_name: refada-php-${DOCKER_ENV}
+    volumes:
+      - ./storage:/var/www/html/storage
+    networks:
+      - refada-network
+    secrets:
+      - env_file
+
+  nginx:
+    image: rakaya/refada:nginx-${DOCKER_ENV}
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    restart: always
+    container_name: refada-nginx-${DOCKER_ENV}
+    ports:
+      - "127.0.0.1:${APP_PORT}:80"
+    volumes:
+      - ./storage/app/public:/var/www/html/public/storage
+    networks:
+      - refada-network
+    depends_on:
+      - laravel
+    environment:
+      - APP_ENV=${DOCKER_ENV}
+
+networks:
+  refada-network:
+    driver: bridge
+    name: refada-${DOCKER_ENV}-network
+    
+secrets:
+  env_file:
+    file: ./.env

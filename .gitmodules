@@ -1,0 +1,5 @@
+[submodule "githooks"]
+	path = githooks
+	url = git@github.com:it-rakaya/githooks.git
+	branch = main
+	ignore = all
