@@ -93,6 +93,7 @@ jobs:
         tags: |
           ${{ secrets.DOCKER_USERNAME }}/refada:${{ matrix.docker_image.name }}-dev
           ${{ secrets.DOCKER_USERNAME }}/refada:${{ env.TAG }}
+        outputs: type=image,push=true
 
   deploy:
     name: deploy the new images
